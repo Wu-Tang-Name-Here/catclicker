@@ -25,28 +25,35 @@ var	cats = [
 		count: 0
 	}];
 
+var $catPic= document.getElementById('cat-img')
+var $catName = document.getElementById('catname')
+var $catCount = document.getElementById('cat-count')
+var $catlist = document.getElementById('cat-list')
+
 for (var i = 0; i <cats.length; i++) {
 	var cat = cats[i];
 
 	var catList = document.createElement('li');
-	catList.textContent = cat.name;
+	   catList.textContent = cat.name;
 
 	catList.addEventListener('click', (function(catCopy) {
 		return function() {
-			document(catCopy);
+			$catPic.src = catCopy.imgSrc;
+            $catName.innerHTML = catCopy.name;
+            $catCount.innerHTML = catCopy.count;
+            currentCat = catCopy;
 		};
 	})(cat));
 
-	document.body.appendChild(catList);
+	$catList.appendChild(catList);
 };
-/*
-//////////Counts number of clicks 
-var counter = document.getElementById('counter')
-var clicker = document.getElementById('catimage'),
-	count = 0;
-clicker.onclick = function() {
-	count += 1;
-	counter.innerHTML =  count;
-	selectCatName.setAttribute('src', randomCatName);
+
+//////////Counts number of clicks
+
+var currentCat
+
+$catPic.onclick = function() {
+	currentCat.count += 1;
+	$catCount.innerHTML = currentCat.count;
 };
-*/
+

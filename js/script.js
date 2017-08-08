@@ -28,7 +28,7 @@ var	cats = [
 var $catPic= document.getElementById('cat-img')
 var $catName = document.getElementById('catname')
 var $catCount = document.getElementById('cat-count')
-var $catlist = document.getElementById('cat-list')
+var $catList = document.getElementById('cat-list')
 
 for (var i = 0; i <cats.length; i++) {
 	var cat = cats[i];
@@ -38,6 +38,7 @@ for (var i = 0; i <cats.length; i++) {
 
 	catList.addEventListener('click', (function(catCopy) {
 		return function() {
+			document.getElementById('gif').innerHTML = "";
 			$catPic.src = catCopy.imgSrc;
             $catName.innerHTML = catCopy.name;
             $catCount.innerHTML = catCopy.count;

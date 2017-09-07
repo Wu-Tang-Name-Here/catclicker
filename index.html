@@ -22,10 +22,21 @@
 					</div>
 				</div>
 
-				<h3 style="color: darkred; font-weight: bold;" id="gif">Cat of the moment</h3>
-
-				<img id="cat-img" style="width: 45%; height: 45%;" src="http://thecatapi.com/api/images/get?format=src&type=gif" alt="Cute Kitty"></img>
+				<img id="cat-img" style="width: 45%; height: 45%;"></img>
 			</div>
+		</div>
+		<button id="admin" onclick="showForm();">Admin</button>
+		<div id="show-admin">
+			<form id="admin-mode">
+				Name <br>
+				<input id="input-name" type="text" name="fname"/><br>
+				URL <br>
+				<input id="input-url" type="text" name="furl"/><br>
+				Clicks <br>
+				<input id="input-clicks" type="text" name="fclicks"/><br>
+				</form>
+				<button id="form-cancel" onclick="hideForm();">Cancel</button>
+				<button id="form-submit" onclick="save();">Submit</button>
 		</div>
 	</div>
 <script src="js/script.js"></script>

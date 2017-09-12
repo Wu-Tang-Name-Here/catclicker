@@ -67,6 +67,10 @@ var octopus = {
 
 	document.addEventListener ('click', function(){
 		var newProperties = document.getElementById('admin');
+
+	document.addEventListener ('click', function(){
+
+	})
 		newProperties = model.currentCat;
 		console.log(newProperties);
 
@@ -88,6 +92,7 @@ function showForm(){
 
 function hideForm(){
 	document.getElementById('show-admin').style.visibility="hidden";
+	document.getElementById('form-submit').style.visibility="hidden";
 }
 
 var catView = {
@@ -102,7 +107,7 @@ var catView = {
 			octopus.incrementCounter();
 		});
 		///////save form input/////////
-		document.getElementById('form-submit').addEventListener('click', save);
+		document.getElementById('form-submit').addEventListener('click', 'save');
 		function save(){
 			octopus.render();
 		}

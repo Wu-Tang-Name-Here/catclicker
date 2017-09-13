@@ -66,6 +66,7 @@ var octopus = {
 
 	save: function() {
 		
+	console.log("Test");
 		var inputName = document.getElementById('input-name');
 		var inputURL = document.getElementById('input-url');
 		var inputClicks = document.getElementById('input-clicks');
@@ -114,7 +115,8 @@ var catView = {
 		});
 		///////save form input/////////
 		document.getElementById('form-submit').addEventListener('click', function(){
-			save(); 
+			octopus.save(); 
+			catView.render();
 		});
 
 

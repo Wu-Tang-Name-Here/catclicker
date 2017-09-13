@@ -52,7 +52,7 @@ var octopus = {
 	},
 
 	getCats: function(){
-		return model.cats
+		return model.cats;
 	},
 
 	setCurrentCat: function(cat) {
@@ -62,10 +62,20 @@ var octopus = {
 	incrementCounter: function() {
 		model.currentCat.count++;
 		catView.render();
-	}
-};
+	},
 
-	document.addEventListener ('click', function(){
+	save: function() {
+		
+		var inputName = document.getElementById('input-name');
+		var inputURL = document.getElementById('input-url');
+		var inputClicks = document.getElementById('input-clicks');
+
+		model.currentCat.name = inputName.value;
+		model.currentCat.imgSrc = inputURL.value;
+		model.currentCat.count = inputClicks.value;
+	}
+	};
+	/*document.addEventListener ('click', function(){
 		var newProperties = document.getElementById('admin');
 
 	document.addEventListener ('click', function(){
@@ -78,11 +88,7 @@ var octopus = {
 		var inputURL = document.getElementById('input-url');
 		var inputClicks = document.getElementById('input-clicks');
 
-		inputName.value = newProperties.name;
-		inputURL.value = newProperties.imgSrc;
-		inputClicks.value = newProperties.count;
-
-	});
+	});	*/
 
 ////////////////////////VIEW////////////////////////
 function showForm(){
@@ -107,10 +113,17 @@ var catView = {
 			octopus.incrementCounter();
 		});
 		///////save form input/////////
-		document.getElementById('form-submit').addEventListener('click', 'save');
-		function save(){
-			octopus.render();
-		}
+		document.getElementById('form-submit').addEventListener('click', function(){
+			save(); 
+		});
+
+
+		/*document.getElementById('form-submit').addEventListener('click', save);
+			function save(){
+				this.inputName.value = document.addEventListener('click', save(){
+					octopus.render;
+				})
+		}*/
 
 		this.render();
 	},
